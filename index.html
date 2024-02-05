@@ -99,22 +99,24 @@
 
 	<input type="text" class="input-box" id="inputData" placeholder="輸入內容">
 	
-    <button class="button" onclick="generateQ91Scheme()">呼叫Q91</a>
+    <button class="button" onclick="generateQ91Scheme()">呼叫Q91</button>
 	
-	<button class="button" onclick="openGoogle()">Google</a>
+	<button class="button" onclick="openGoogle()">Google</button>
 
   </div>
   
   <script>
 		function generateQ91Scheme() {
 			var inputData = document.getElementById('inputData').value;
-			
+			var q91SchemeURL = 'q91://ic.chance/data=' + inputData;
 			if (!inputData) {
 				alert("請輸入訂單號");
 				return;
+			} else {
+				//window.location.href = q91SchemeURL;
+				window.open(q91SchemeURL, "_blank");
 			}
 			
-			var q91SchemeURL = 'q91://open?data=' + inputData;
 		}
 		
 		function openGoogle() {
