@@ -93,11 +93,28 @@
     <p>此頁僅用於呼叫Q91 scheme測試用</p>
     <p>點擊下方按鈕跳轉至Q91</p>
 
-    <a class="button" href="q91://ic.chance/" target="_blank">呼叫Q91</a><br>
+	<input type="text" class="input-box" id="inputData" placeholder="輸入內容">
+    <button class="button" onclick="generateQ91Scheme()">呼叫Q91</a><br>
+	
 	<br>
 	<a class="button" href="https://google.com" target="_blank">Google</a>
 
   </div>
+  
+  <script>
+		function generateQ91Scheme() {
+			var inputData = document.getElementById('inputData').value;
+			var q91SchemeURL = 'q91://ic.chance/data=' + inputData;
+			if (!inputData) {
+				alert("請輸入訂單號");
+				return;
+			} else {
+				window.location.href = q91SchemeURL;
+			}
+			
+		}
+  
+  </script>
 
 </body>
 
